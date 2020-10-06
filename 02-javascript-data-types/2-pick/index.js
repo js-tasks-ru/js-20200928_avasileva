@@ -7,11 +7,11 @@
 export const pick = (obj, ...fields) => {
   let filteredObject = {};
 
-  fields.forEach((field) => {
-    if (obj[field]) {
-      filteredObject[field] = obj[field]
-    };
-  });
+  for (const [key, value] of Object.entries(obj)) {
+    if (fields.includes(key)) {
+      filteredObject[key] = value;
+    }
+  }
 
   return filteredObject;
 };

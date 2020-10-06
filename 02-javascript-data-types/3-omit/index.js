@@ -5,13 +5,13 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-  let filteredObject = obj;
+  let filteredObject = {};
 
-  fields.forEach((field) => {
-    if (filteredObject[field]) {
-      delete filteredObject[field]
-    };
-  });
+  for (const key of Object.keys(obj)) {
+    if (!fields.includes(key)) {
+      filteredObject[key] = obj[key];
+    }
+  }
 
   return filteredObject;
 };
