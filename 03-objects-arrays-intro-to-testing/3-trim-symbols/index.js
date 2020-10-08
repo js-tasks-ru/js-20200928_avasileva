@@ -6,4 +6,17 @@
  */
 export function trimSymbols(string, size) {
 
+  if (size === 0 || string === "") return "";
+  if (!size) return string;
+
+  const firstSlice = string.slice(0, size);
+  const rest = [...string.slice(size)];
+
+  return rest.reduce((result, char) => {
+    if(!result.endsWith(char.repeat(size))) {
+      result += char;
+    }
+
+    return result;
+  }, firstSlice);
 }
