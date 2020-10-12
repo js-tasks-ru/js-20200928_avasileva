@@ -20,7 +20,7 @@ export default class ColumnChart {
     const maxValue = Math.max(...data);
     const scale = this.CHAR_HEIGHT / maxValue;
 
-    return this.data
+    return data
       .map(item => {
         const percent = (item / maxValue * 100).toFixed(0);
         return `<div style="--value: ${Math.floor(item * scale)}" data-tooltip="${percent}%"></div>`;

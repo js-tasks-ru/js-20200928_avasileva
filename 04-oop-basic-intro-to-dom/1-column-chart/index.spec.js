@@ -52,10 +52,10 @@ describe('oop-basic-intro-to-dom/column-chart', () => {
     expect(columnLink).toHaveTextContent(value);
   });
 
-  it('should have property \'chartHeight', () => {
+  it('should have property \'CHAR_HEIGHT', () => {
     columnChart = new ColumnChart();
 
-    expect(columnChart.chartHeight).toEqual(50);
+    expect(columnChart.CHAR_HEIGHT).toEqual(50);
   });
 
   it('should render data correctly', () => {
